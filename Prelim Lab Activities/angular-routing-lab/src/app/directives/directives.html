@@ -1,0 +1,109 @@
+<div class="container">
+
+  <!-- Static Note -->
+  <section class="card">
+    @if (isStaticNoteVisible === true) {
+      <h2>This is a static note with true value</h2>
+    } @else {
+      <h2>This static note has false value</h2>
+    }
+  </section>
+
+  <!-- Show/Hide Note -->
+  <section class="card row">
+    <div>
+      @if (isNoteVisible === true) {
+        <p>This is a note!</p>
+      }
+    </div>
+    <div class="button-group">
+      <button (click)="showNote()">Show Note</button>
+      <button (click)="hideNote()">Hide Note</button>
+    </div>
+  </section>
+
+  <!-- Toggle Paragraph -->
+  <section class="card">
+    <button (click)="toggleNote()">
+      {{ isParagraphVisible ? 'Hide' : 'Show' }}
+    </button>
+
+    @if (isParagraphVisible) {
+      <p>This is the paragraph content.</p>
+    }
+  </section>
+
+  <!-- Month Input -->
+  <section class="card row">
+    <div>
+      @if (monthNameDynamic == 'Jan') {
+        <p>January</p>
+      } @else if (monthNameDynamic == 'Feb') {
+        <p>February</p>
+      } @else if (monthNameDynamic == 'Mar') {
+        <p>March</p>
+      } @else if (monthNameDynamic == 'Apr') {
+        <p>April</p>
+      } @else if (monthNameDynamic == 'May') {
+        <p>May</p>
+      } @else if (monthNameDynamic == 'Jun') {
+        <p>June</p>
+      } @else if (monthNameDynamic == 'Jul') {
+        <p>July</p>
+      } @else if (monthNameDynamic == 'Aug') {
+        <p>August</p>
+      } @else if (monthNameDynamic == 'Sep') {
+        <p>September</p>
+      } @else if (monthNameDynamic == 'Oct') {
+        <p>October</p>
+      } @else if (monthNameDynamic == 'Nov') {
+        <p>November</p>
+      } @else if (monthNameDynamic == 'Dec') {
+        <p>December</p>
+      } @else {
+        <p>Wrong input! Please type a 3-letter abbreviation (ex: Jan)</p>
+      }
+    </div>
+
+    <div>
+      <input type="text" [(ngModel)]="monthNameDynamic" placeholder="Enter month (ex: Jan)">
+    </div>
+  </section>
+
+  <!-- City List -->
+  <section class="card">
+    <h3>Cities</h3>
+    <ul>
+      @for (item of cityList; track $index) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </section>
+
+  <!-- Student Table -->
+  <section class="card">
+    <h3>Student List</h3>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of studentList; track $index) {
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.course }}</td>
+            <td class="{{ item.isActive ? 'active' : 'inactive' }}">
+              {{ item.isActive ? 'Active' : 'Inactive' }}
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+</div>

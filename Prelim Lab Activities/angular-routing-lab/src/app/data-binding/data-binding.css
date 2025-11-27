@@ -1,0 +1,40 @@
+/* Center everything on the page */
+body, :host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Beautiful container card */
+.container {
+  width: 600px;
+  background: #ffffff;
+  padding: 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Style headings */
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+/* Box for style binding */
+.box {
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/* Passing / failing classes */
+.passing {
+  color: green;
+  font-weight: bold;
+}
+
+.failing {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,22 @@
+.dark-nav {
+  display: flex;
+  gap: 2rem;
+  background: #391e46;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+}
+
+.dark-nav a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.dark-nav a:hover {
+  color: #fff;
+}
+
+.dark-nav a.active {
+  color: #4fa3ff;
+  border-bottom: 2px solid #4fa3ff;
+}
