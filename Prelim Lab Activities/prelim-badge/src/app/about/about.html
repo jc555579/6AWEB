@@ -1,1 +1,22 @@
-<p>about works!</p>
+<div class="container my-5">
+  <h2 class="fw-bold mb-3">About Us</h2>
+
+  <p class="text-muted">
+    We are an international organization dedicated to hosting
+    research and academic conferences across the globe.
+  </p>
+
+  <button
+    class="btn btn-outline-primary mb-3"
+    (click)="learnMore()">
+    {{ showMore ? 'Show Less' : 'Learn More' }}
+  </button>
+
+  <div *ngIf="showMore" class="card card-body bg-light border-0 shadow-sm animate-fade-in">
+    <p class="text-muted mb-0">
+      Our conferences provide a platform for collaboration,
+      innovation, and knowledge sharing among researchers,
+      professionals, and institutions worldwide.
+    </p>
+  </div>
+</div>

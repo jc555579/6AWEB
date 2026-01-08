@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // MUST HAVE for *ngIf
 
 @Component({
   selector: 'app-about',
-  imports: [],
-  templateUrl: './about.html',
-  styleUrl: './about.css',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './about.html'
 })
-export class About {
+export class AboutComponent {
 
+  showMore = false;
+
+  learnMore() {
+    this.showMore = !this.showMore;
+  }
 }

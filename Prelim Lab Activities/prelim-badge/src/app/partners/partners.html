@@ -1,1 +1,40 @@
-<p>partners works!</p>
+<div class="container my-5">
+  <h2 class="text-center fw-bold mb-4">Our Partners</h2>
+
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-bordered table-striped text-center align-middle mb-0">
+      <thead class="table-dark">
+        <tr>
+          <th>Company</th>
+          <th>Trademark</th>
+          <th>Sponsorship</th>
+          <th>Year Established</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let partner of partners">
+          <td class="fw-bold">{{ partner.company }}</td>
+          <td>
+            <img
+              [src]="partner.logo"
+              [alt]="partner.company"
+              style="width: 80px; height: auto; object-fit: contain;"
+            >
+          </td>
+          <td>
+            <span class="badge"
+              [ngClass]="{
+                'bg-info text-dark': partner.sponsorship === 'Platinum',
+                'bg-warning text-dark': partner.sponsorship === 'Gold',
+                'bg-secondary': partner.sponsorship === 'Silver'
+              }">
+              {{ partner.sponsorship }}
+            </span>
+          </td>
+          <td>{{ partner.year }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
