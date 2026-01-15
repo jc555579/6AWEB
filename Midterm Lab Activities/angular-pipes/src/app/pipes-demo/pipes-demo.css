@@ -1,0 +1,49 @@
+/* Apply dark background to the whole page */
+:host {
+  display: block;
+  background-color: #121212;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pipes-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1e1e1e; /* Slightly lighter than background */
+  color: #e0e0e0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
+}
+
+h1, h3 {
+  color: #bb86fc; /* Modern purple accent */
+  text-align: center;
+}
+
+h3 {
+  text-align: left;
+  border-left: 4px solid #03dac6;
+  padding-left: 15px;
+  margin-top: 25px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 30px 0;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  color: #888;
+}
+
+strong {
+  color: #03dac6;
+}

@@ -1,0 +1,131 @@
+<!--
+<div>
+  Today's date :- {{ presentDate | date}}
+</div>
+
+
+<div>
+  This is a short date :- {{presentDate | date: 'shortDate' }} <br/>
+  This line shows the full date :- {{presentDate | date: 'fullDate' }} <br/>
+  This will show a formatted date :- {{presentDate | date: 'M/dd/yyyy'}} <br/>
+  This indicates the hours and minutes :- {{presentDate | date: 'h:mm'}}
+  Joemar S. Catipon
+</div>
+
+<div>
+  Date with uppercase :- {{ presentDate | date: 'fullDate' | uppercase }} <br/>
+  Date with lowercase :- {{ presentDate | date: 'fullDate' | lowercase }} <br/>
+</div>
+-->
+
+<!--
+<div>
+  Seconds changing in Time : {{ time$ | async | date: 'mediumTime' }}
+</div>
+-->
+
+<!-- <h3> Currency Pipe </h3>
+<p> {{ price | currency:'':true }} </p>
+<p> {{ price | currency: 'INR' }} </p>
+
+<div>
+  <h3>Start index :- {{Fruits | slice:2}}</h3>
+  <h4>Start and end index :- {{Fruits | slice:1:4}}</h4>
+  <h5>Negative index :- {{Fruits | slice :- 2}}</h5>
+  <h6>Negative start and end index :- {{Fruits | slice :- 4 :- 2}}</h6>
+</div> -->
+
+<!--
+<div style="text-align:center">
+  <p> Apply formatting :- {{decimalNum1 | number: '3.1'}} </p>
+  <p> Apply formatting :- {{decimalNum1 | number: '2.1-4'}} </p>
+</div>
+-->
+
+<h1>Pipes Demo</h1>
+<div class="pipes-container">
+
+  <section>
+    <h3>Date Pipe</h3>
+    <p>Today's date :- {{ presentDate | date }}</p>
+    <p>Short date :- {{ presentDate | date: 'shortDate' }}</p>
+    <p>Full date :- {{ presentDate | date: 'fullDate' }}</p>
+    <p>Custom Format :- {{ presentDate | date: 'M/dd/yyyy' }}</p>
+    <p>Hours & Minutes :- {{ presentDate | date: 'h:mm' }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>Chained Pipes</h3>
+    <p>Uppercase Date :- {{ presentDate | date: 'fullDate' | uppercase }}</p>
+    <p>Lowercase Date :- {{ presentDate | date: 'fullDate' | lowercase }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>Async Pipe</h3>
+    <p>Seconds changing in Time : <strong>{{ time$ | async | date: 'mediumTime' }}</strong></p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>Currency Pipe</h3>
+    <p>Default (USD): {{ price | currency }}</p>
+    <p>Indian Rupee: {{ price | currency: 'INR' }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>Slice Pipe</h3>
+    <p>Original: {{ Fruits }}</p>
+    <p>Start index 2: {{ Fruits | slice:2 }}</p>
+    <p>Index 1 to 4: {{ Fruits | slice:1:4 }}</p>
+    <p>Negative index -2: {{ Fruits | slice:-2 }}</p>
+    <p>Negative start/end: {{ Fruits | slice:-4:-2 }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>Decimal Pipe</h3>
+    <p>Apply Formatting :- {{ decimalNum1 | number: '3.1' }}</p>
+    <p>Apply Formatting :- {{ decimalNum1 | number: '2.1-4' }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>Percent Pipe</h3>
+    <p>Project Completion: {{ completionRate | percent }}</p>
+    <p>Formatted (2.2-2): {{ completionRate | percent: '2.2-2' }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>TitleCase Pipe</h3>
+    <p>Original: {{ rawText }}</p>
+    <p>Formatted: {{ rawText | titlecase }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>JSON Pipe </h3>
+    <p>Raw Object Output:</p>
+    <p>{{ userObject | json }}</p>
+  </section>
+
+  <hr>
+
+  <footer>
+    <p>Created by: <strong>Joemar S. Catipon</strong></p>
+    <p>{{ presentDate | date: 'yyyy' }} &copy; Angular Pipes Demo</p>
+  </footer>
+
+</div>
+
