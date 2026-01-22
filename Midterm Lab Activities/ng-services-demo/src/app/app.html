@@ -1,0 +1,53 @@
+<h2>EMPLOYEES LIST</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>FIRST NAME</th>
+      <th>LAST NAME</th>
+      <th>EMAIL</th>
+    </tr> </thead>
+
+  <tbody>
+    @for (employee of employees; track employee.id) {
+      <tr class="border-b">
+        <td class="py-2 px-4 text-center">{{ employee.id }}</td>
+        <td class="py-2 px-4 text-center">{{ employee.firstname }}</td>
+        <td class="py-2 px-4 text-center">{{ employee.lastname }}</td>
+        <td class="py-2 px-4 text-center">{{ employee.email }}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="4">No employees found.</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<h2>PRODUCTS LIST</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Description</th>
+      <th>Price</th>
+    </tr> </thead>
+
+  <tbody>
+    @for (product of products; track product.pId) {
+      <tr class="border-b">
+        <td class="py-2 px-4 text-center">{{ product.pId }}</td>
+        <td class="py-2 px-4 text-center">{{ product.pName }}</td>
+        <td class="py-2 px-4 text-center">{{ product.pDescription }}</td>
+        <td class="py-2 px-4 text-center">{{ product.pPrice }}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="4">No products found.</td>
+      </tr>
+    }
+  </tbody>
+</table>
