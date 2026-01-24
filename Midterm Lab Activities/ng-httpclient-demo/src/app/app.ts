@@ -1,26 +1,31 @@
-import { Component, signal, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HttpClient } from '@angular/common/http'; // Fixed casing and import path
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Httpclient } from './httpclient';   
 import { User } from './user.model';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Required for modern Angular imports
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule],   
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App implements OnInit { // Added implements OnInit
-  protected readonly title = signal('http-client-demo');
+export class App implements OnInit {
   httpusers: User[] = [];
+  products: Product[] = [];
 
-  constructor(private httpClient: HttpClient) {} // Fixed casing to HttpClient
+  constructor(private httpclient: Httpclient) {}
 
-  ngOnInit() {
-    // Note: 'getUsersRemotely' must be a method you defined in a custom service.
-    // If using standard HttpClient, use: this.httpClient.get<User[]>(url).subscribe...
-    this.httpClient.getUsersRemotely().subscribe((data) => {
+  ngOnInit(): void {
+    this.httpclient.getUsersRemotely().subscribe((data: User[]) => {
       this.httpusers = data;
+      console.log('Users loaded:', data);
+    });
+
+    this.httpclient.getProductsRemotely().subscribe((data: Product[]) => {
+      this.products = data;
+      console.log('Products loaded:', data);
     });
   }
 }
