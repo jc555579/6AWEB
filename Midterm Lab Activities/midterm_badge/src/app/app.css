@@ -1,0 +1,44 @@
+.navbar {
+  background-color: #232f3e; /* AWS Squid Ink */
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 18px 0;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff9900; /* AWS Orange */
+}
+
+/* The Active State */
+.navbar a.active {
+  color: #ff9900;
+  border-bottom: 3px solid #ff9900;
+}
+
+/* Content spacing to account for sticky nav */
+.content {
+  padding: 2rem;
+  min-height: calc(100vh - 60px);
+}

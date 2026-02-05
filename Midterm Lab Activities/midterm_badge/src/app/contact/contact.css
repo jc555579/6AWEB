@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.contact-form, .preview-area {
+  flex: 1;
+}
+
+/* Form Styling */
+.form-field {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #232f3e;
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #aab7b8;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ff9900;
+  outline: none;
+}
+
+/* Button with Disabled State */
+button {
+  background-color: #ff9900;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:disabled {
+  background-color: #eaeded;
+  color: #aab7b8;
+  cursor: not-allowed;
+}
+
+/* Preview Card */
+.preview-card {
+  background: #f8f9f9;
+  border: 2px dashed #d5dbdb;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.status-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-badge.valid { background: #e7f4e4; color: #1d8102; }
+.status-badge.invalid { background: #fdf3f3; color: #d13212; }

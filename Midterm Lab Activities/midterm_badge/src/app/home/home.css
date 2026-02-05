@@ -1,0 +1,65 @@
+
+h2 {
+  color: #232f3e; /* AWS Dark Blue */
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #ff9900; /* AWS Orange */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+h3 {
+  color: #444;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* List Reset */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual List Items (Cards) */
+li {
+  background: #ffffff;
+  border: 1px solid #eaeded;
+  border-radius: 8px;
+  padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #ff9900;
+}
+
+/* Post Title */
+strong {
+  color: #0073bb; /* AWS Link Blue */
+  font-size: 1.05rem;
+}
+
+/* Category and Date Text */
+li span, li {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #545b64;
+  font-size: 0.9rem;
+}
+
+/* Specific styling for the (CATEGORY) text */
+li :nth-child(2) {
+  font-weight: 600;
+  color: #ff9900;
+  margin-left: 8px;
+}

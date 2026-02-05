@@ -1,0 +1,17 @@
+    <div class="about-container">
+      <section class="info-section">
+        <h2 class="section-heading">{{ 'Project Overview' | uppercase }}</h2>
+        <p>
+          This portal provides real-time tracking of AWS cloud updates and 
+          infrastructure releases. It is built as a lightweight, high-performance 
+          Single Page Application using the latest Angular framework.
+        </p>
+      </section>
+
+      <hr />
+
+      <footer class="system-info">
+        <p><strong>System Status:</strong> Operational</p>
+        <p><strong>Last Checked:</strong> {{ currentTimestamp | date:'full' }}</p>
+      </footer>
+    </div>

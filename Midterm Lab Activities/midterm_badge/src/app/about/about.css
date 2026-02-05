@@ -1,0 +1,55 @@
+.about-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border: 1px solid #eaeded;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.section-heading {
+  color: #232f3e; /* AWS Squid Ink Blue */
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+  color: #545b64;
+  font-size: 1rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eaeded;
+  margin: 2rem 0;
+}
+
+.system-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #687078;
+}
+
+.system-info strong {
+  color: #1d8102; /* Success Green */
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* Subtle pulse for "Operational" status */
+.system-info p:first-child::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #00ca3e;
+  border-radius: 50%;
+  margin-right: 8px;
+}

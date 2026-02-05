@@ -1,0 +1,25 @@
+<div class="services-page">
+  <h2>AWS Service Catalog</h2>
+
+  <input [formControl]="searchControl" type="text" placeholder="Search services..." class="search-input">
+
+  <ng-template #loading>
+    <p class="status-msg">Loading cloud services...</p>
+  </ng-template>
+
+  <ng-template #errorState>
+    <p class="error-msg">Failed to load services. Please try again later.</p>
+  </ng-template>
+
+  <ng-container *ngIf="filteredPosts$ | async as posts; else loading">
+    <div class="grid" *ngIf="posts.length > 0; else noResults">
+      @for (post of posts; track post.id) {
+        <div class="card">
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.body | slice:0:50 }}...</p> <span class="badge">{{ post.category }}</span>
+        </div>
+      }
+    </div>
+    <ng-template #noResults><p>No matches found.</p></ng-template>
+  </ng-container>
+</div>

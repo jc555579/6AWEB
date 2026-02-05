@@ -1,0 +1,45 @@
+<div class="contact-page">
+  <h2>Contact Us</h2>
+  
+  <div class="container">
+    <form [formGroup]="contactForm" class="contact-form">
+      <div class="form-field">
+        <label>Full Name</label>
+        <input formControlName="name" placeholder="Enter your name">
+      </div>
+
+      <div class="form-field">
+        <label>Subject</label>
+        <select formControlName="subject">
+          <option value="General Inquiry">General Inquiry</option>
+          <option value="Technical Support">Technical Support</option>
+          <option value="Billing">Billing</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label>Message</label>
+        <textarea formControlName="message" rows="4"></textarea>
+      </div>
+
+      <button type="button" (click)="onSubmit()" [disabled]="contactForm.invalid">
+        Submit Message
+      </button>
+    </form>
+
+    <div class="preview-area">
+      <h3>Form Preview</h3>
+      <div class="preview-card">
+        <p><strong>Name (Formatted):</strong> 
+            {{ contactForm.get('name')?.value | uppercase }}
+        </p>
+        <p><strong>Subject:</strong> {{ contactForm.get('subject')?.value }}</p>
+        <p><strong>Message Snippet:</strong> {{ contactForm.get('message')?.value }}</p>
+        
+        <div class="status-badge" [ngClass]="contactForm.valid ? 'valid' : 'invalid'">
+          {{ contactForm.valid ? 'Ready to Send' : 'Incomplete Form' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
