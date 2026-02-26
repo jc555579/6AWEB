@@ -1,0 +1,85 @@
+<div class="form-container mat-elevation-z2">
+  <h2>Create Account</h2>
+
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Enter Text" formControlName="userName">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Enter Email" formControlName="email">
+      @if (formdata.controls['email'].invalid && formdata.controls['email'].touched) {
+        <mat-error>Email is required and must be valid.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Enter Password" formControlName="password">
+      @if (formdata.controls['password'].invalid && formdata.controls['password'].touched) {
+        <mat-error>Password must be at least 8 characters.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <mat-select formControlName="country">
+        @for (c of countries; track c) {
+          <mat-option [value]="c">{{c}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <div class="radio-group">
+      <label class="radio-label">Gender</label>
+      <mat-radio-group formControlName="gender" class="gender-radio-group">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="toggle-group">
+      <mat-slide-toggle formControlName="subscribe" color="primary">
+        Notify updates:
+      </mat-slide-toggle>
+    </div>
+
+    <div class="slider-group">
+      <label class="slider-label">Angular Skill: {{ formdata.get('angularSkillLevel')?.value }}</label>
+      <mat-slider [min]="minSkillLevel" [max]="maxSkillLevel" [step]="1" [discrete]="true">
+        <input matSliderThumb formControlName="angularSkillLevel">
+      </mat-slider>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formdata.valid">
+      Submit Registration
+    </button>
+  </form>
+
+  @if (submitted) {
+    <mat-accordion class="result-accordion">
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Registration Successful</mat-panel-title>
+          <mat-panel-description>Click to view details</mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <p><strong>User:</strong> {{ userName }} ({{ country }})</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+         <p><strong>Gender:</strong> {{ gender }}</p>
+        <p><strong>Notify updates:</strong> {{ subscribe ? 'Yes' : 'No' }}</p>
+        <p><strong>Skill Level:</strong> {{ angularSkillLevel }} / 10</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  }
+</div>

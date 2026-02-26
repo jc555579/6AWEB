@@ -1,0 +1,23 @@
+<div class="app-wrapper">
+
+  <mat-toolbar color="primary" class="nav-bar mat-elevation-z3">
+    <div class="nav-content">
+      <div class="logo-group">
+        <mat-icon>app_registration</mat-icon>
+      </div>
+
+      <div class="nav-links">
+        <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
+        <a mat-button routerLink="/register" routerLinkActive="active-link">Register</a>
+        <button mat-icon-button class="profile-btn">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>
