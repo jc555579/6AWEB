@@ -1,0 +1,51 @@
+<div class="app-container" [class.dark-theme]="isDarkMode">
+  <mat-toolbar color="primary" class="main-header mat-elevation-z6">
+    <div class="nav-wrapper">
+      <div class="brand" routerLink="/home">
+        <mat-icon class="brand-icon">verified_user</mat-icon>
+        <span>MemberHub</span>
+      </div>
+
+      <div class="nav-links">
+        <a mat-button routerLink="/home" routerLinkActive="active-link">
+          <mat-icon>home</mat-icon> Home
+        </a>
+        <a mat-button routerLink="/register" routerLinkActive="active-link">
+          <mat-icon>person_add</mat-icon> Register
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <span class="theme-label">{{ isDarkMode ? 'Dark' : 'Light' }} Mode</span>
+
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="Profile Menu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+
+        <mat-menu #profileMenu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>help</mat-icon>
+            <span>Support</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <main class="content-area">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 Tech Innovation Hub | Membership Portal</p>
+  </footer>
+</div>

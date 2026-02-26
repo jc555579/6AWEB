@@ -1,0 +1,47 @@
+.membership-wrapper {
+  padding: 40px 20px;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.dark-theme {
+  background-color: #303030;
+  color: white !important;
+}
+
+.dark-theme .mat-mdc-card {
+  background-color: #424242;
+  color: white;
+}
+
+.form-container {
+  max-width: 500px;
+  width: 100%;
+  padding: 25px;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.radio-group, .toggle-group, .slider-group {
+  margin: 15px 0;
+}
+
+.full-width {
+  width: 100%;
+  padding: 10px;
+}
+
+.result-accordion {
+  margin-top: 20px;
+}
