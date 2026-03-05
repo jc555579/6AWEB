@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Books Application</h2>
+
+  <div class="form-section">
+    <input [(ngModel)]="newBookData.title" placeholder="Book Title" class="full-width">
+    <input [(ngModel)]="newBookData.description" placeholder="Description" class="full-width">
+    <input [(ngModel)]="newBookData.author" placeholder="Author">
+    <input [(ngModel)]="newBookData.publishedYear" placeholder="Year" type="number">
+    <input [(ngModel)]="newBookData.price" placeholder="Price ($)" type="number" class="full-width">
+    <button class="add-btn" (click)='addBook()'>Add New Book</button>
+  </div>
+
+  <hr>
+
+  <h3>Available Books</h3>
+  @for (book of books; track book.id) {
+    <div class="book-card">
+      <div class="book-info">
+        <span class="book-title">{{ book.title }}</span>
+        <span class="book-meta">{{ book.author }} • {{ book.publishedYear }}</span>
+      </div>
+      
+      <span class="price-tag">${{ book.price }}</span>
+
+      <div class="actions">
+        <button class="btn-update" (click)="updateBook(book.id)">Edit</button>
+        <button class="btn-delete" (click)="deleteBook(book.id)">Delete</button>
+      </div>
+    </div>
+  } @empty {
+    <p style="text-align: center; color: #999;">Your library is empty. Add a book above!</p>
+  }
+</div>

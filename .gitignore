@@ -1,2 +1,5 @@
 # Local Netlify folder
 .netlify
+
+/node_modules
+E:\6AWEB\Finals Lab Activities\MEAN-FINALS\API\node_modules
